@@ -2,7 +2,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { buildConfig } from "payload";
 import type { PayloadRequest } from "payload";
-import { mongooseAdapter } from "@payloadcms/db-mongodb";
+import { postgresAdapter } from "@payloadcms/db-postgres";
 import sharp from "sharp";
 import { minioStorage } from "~/adapters/storage";
 import { defaultLexical } from "~/fields/defaultLexical";
@@ -58,8 +58,10 @@ export default buildConfig({
   },
   // This config helps us configure global or default features that the other editors can inherit
   editor: defaultLexical,
-  db: mongooseAdapter({
-    url: process.env.DATABASE_URI || "",
+  db: postgresAdapter({
+    pool: {
+      connectionString: process.env.DATABASE_URI || "",
+    },
   }),
   collections: [Pages, Posts, Media, Categories, Users],
   cors: [getServerSideURL()].filter(Boolean),
