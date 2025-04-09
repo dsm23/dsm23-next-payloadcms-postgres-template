@@ -22,6 +22,26 @@ services:
       - MINIO_ROOT_PASSWORD=${MINIO_ROOT_PASSWORD}
     volumes:
       - "bucket:/data/minio"
+    healthcheck:
+      test: ["CMD", "mc", "ready", "local"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  createbucket:
+    image: minio/mc:RELEASE.2025-03-12T17-29-24Z@sha256:470f5546b596e16c7816b9c3fa7a78ce4076bb73c2c73f7faeec0c8043923123
+    depends_on:
+      minio:
+        condition: service_healthy
+        restart: true
+    entrypoint: >
+      /bin/sh -c "
+      mc alias set myminio http://minio:9000 ${MINIO_ROOT_USER} ${MINIO_ROOT_PASSWORD};
+      mc mb myminio/${MINIO_BUCKET};
+      mc policy set public myminio/${MINIO_BUCKET};
+      mc admin accesskey create myminio/ --access-key ${MINIO_ACCESS_KEY} --secret-key ${MINIO_SECRET_KEY};
+      exit 0;
+      "
 
 volumes:
   bucket:
