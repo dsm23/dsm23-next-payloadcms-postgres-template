@@ -3,7 +3,7 @@
 # To use this Dockerfile, you have to set `output: 'standalone'` in your next.config.js file.
 # From https://github.com/vercel/next.js/blob/canary/examples/with-docker/Dockerfile
 
-FROM node:24.0.2-alpine3.21@sha256:2e6c7937cb36d1e4af3c261b29e862205beb7a409de01f12b6df34800cc108ec AS base
+FROM node:24.1.0-alpine3.21@sha256:17b157f6d46a986fbe88c1943d7e1ac7a2b7780e31a96fbc214dfcea56b26f1f AS base
 
 # corepack is broken https://github.com/nodejs/corepack/issues/612
 # TODO: remove the following when corepack is fixed
