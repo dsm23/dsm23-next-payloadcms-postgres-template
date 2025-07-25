@@ -33,7 +33,6 @@ export const Email: FunctionComponent<
         type="text"
         {...register(name, { pattern: /^\S[^\s@]*@\S+$/, required })}
       />
-
       {errors[name] && <Error name={name} />}
     </Width>
   );
