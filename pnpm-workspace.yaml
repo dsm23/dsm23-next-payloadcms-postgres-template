@@ -1,4 +1,6 @@
 onlyBuiltDependencies:
+  - esbuild
   - lefthook
   - sharp
+
 sideEffectsCache: false
