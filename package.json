@@ -91,7 +91,7 @@
     "eslint-config-next": "16.0.7",
     "eslint-plugin-react-hooks": "7.0.1",
     "eslint-plugin-storybook": "10.1.4",
-    "lefthook": "2.0.7",
+    "lefthook": "2.0.8",
     "npm-run-all2": "8.0.4",
     "playwright": "1.57.0",
     "postcss": "8.5.6",
