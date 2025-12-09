@@ -1,7 +1,7 @@
 services:
   postgres:
     restart: always
-    image: postgres:18.1-bookworm@sha256:5dce49770dfd66a1e14e19380e88305f8c474e43c122358103118dc7643feefa
+    image: postgres:18.1-bookworm@sha256:612e3927f88347b2450873e57fc1f514af95021482ec8952d18f66e8cd078273
     volumes:
       - pgdata:/var/lib/postgresql/data
     ports:
