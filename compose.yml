@@ -10,6 +10,11 @@ services:
       POSTGRES_USER: postgres
       POSTGRES_DB: dsm23-next-payloadcms-postgres-template # THIS MUST MATCH YOUR DB NAME IN .env
       POSTGRES_HOST_AUTH_METHOD: trust
+    healthcheck:
+      test: ["CMD", "pg_isready"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
 
   minio:
     image: minio/minio:RELEASE.2025-09-07T16-13-09Z@sha256:14cea493d9a34af32f524e538b8346cf79f3321eff8e708c1e2960462bd8936e
