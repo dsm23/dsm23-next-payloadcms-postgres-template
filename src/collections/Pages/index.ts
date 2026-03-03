@@ -1,3 +1,5 @@
+import { slugField } from "payload";
+import type { CollectionConfig } from "payload";
 import {
   MetaDescriptionField,
   MetaImageField,
@@ -5,8 +7,6 @@ import {
   OverviewField,
   PreviewField,
 } from "@payloadcms/plugin-seo/fields";
-import { slugField } from "payload";
-import type { CollectionConfig } from "payload";
 import { authenticated } from "~/access/authenticated";
 import { authenticatedOrPublished } from "~/access/authenticatedOrPublished";
 import { Archive } from "~/blocks/ArchiveBlock/config";

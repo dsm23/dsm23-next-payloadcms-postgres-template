@@ -1,9 +1,9 @@
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { postgresAdapter } from "@payloadcms/db-postgres";
-import { nodemailerAdapter } from "@payloadcms/email-nodemailer";
 import { buildConfig } from "payload";
 import type { PayloadRequest } from "payload";
+import { postgresAdapter } from "@payloadcms/db-postgres";
+import { nodemailerAdapter } from "@payloadcms/email-nodemailer";
 import nodemailer from "nodemailer";
 import sharp from "sharp";
 import { minioStorage } from "~/adapters/storage";
