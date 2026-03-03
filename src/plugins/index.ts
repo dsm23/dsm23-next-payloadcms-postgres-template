@@ -1,3 +1,4 @@
+import type { Plugin } from "payload";
 import { formBuilderPlugin } from "@payloadcms/plugin-form-builder";
 import { nestedDocsPlugin } from "@payloadcms/plugin-nested-docs";
 import { redirectsPlugin } from "@payloadcms/plugin-redirects";
@@ -9,7 +10,6 @@ import {
   HeadingFeature,
   lexicalEditor,
 } from "@payloadcms/richtext-lexical";
-import type { Plugin } from "payload";
 import { revalidateRedirects } from "~/hooks/revalidateRedirects";
 import type { Page, Post } from "~/payload-types";
 import { beforeSyncWithSearch } from "~/search/beforeSync";

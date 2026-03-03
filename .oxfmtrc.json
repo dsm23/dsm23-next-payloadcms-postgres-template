@@ -8,6 +8,7 @@
   ],
   "sortPackageJson": false,
   "sortImports": {
+    "internalPattern": ["~/", "@/", "@payload-config"],
     "newlinesBetween": false,
     "customGroups": [
       {
@@ -23,12 +24,16 @@
         "elementNamePattern": ["clsx"]
       },
       {
-        "groupName": "payload-libs",
-        "elementNamePattern": ["payload", "@payloadcms/**"]
-      },
-      {
         "groupName": "next-libs",
         "elementNamePattern": ["next", "next/**", "@next", "@next-**"]
+      },
+      {
+        "groupName": "payload-core",
+        "elementNamePattern": ["payload"]
+      },
+      {
+        "groupName": "payload-libs",
+        "elementNamePattern": ["@payloadcms/**"]
       },
       {
         "groupName": "vitest-libs",
@@ -41,6 +46,7 @@
       "clsx-libs",
       "next-libs",
       ["value-builtin", "type-builtin"],
+      "payload-core",
       "payload-libs",
       ["value-external", "type-external"],
       ["value-internal", "type-internal"],
