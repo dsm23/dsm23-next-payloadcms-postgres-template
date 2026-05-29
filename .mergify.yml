@@ -32,9 +32,9 @@ merge_protections:
       - "title ~= ^(fix|feat|docs|style|refactor|perf|test|build|ci|chore|revert)(?:\\(.+\\))?:"
 
 merge_protections_settings:
-  auto_merge: true
-  post_comment: true
+  auto_merge_conditions: true
   reporting_method: check-runs
+  post_comment: true
 
 merge_queue:
   max_parallel_checks: 5
